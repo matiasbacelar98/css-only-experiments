@@ -60,9 +60,6 @@ h6 {
 }
 
 /*_________ Image Reveal _________*/
-:root {
-}
-
 .main {
   display: grid;
   justify-content: center;
@@ -72,35 +69,41 @@ h6 {
 
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 600px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 37.5rem; /* 600px */
   align-items: stretch;
   justify-items: stretch;
-  column-gap: 1.5rem;
-  max-width: 1500px;
+  max-width: 93.75rem; /* 1500px /
 
   /* The animation only works if the repeat() function is not used */
   transition: all 300ms ease-out;
 }
 
-.wrapper-img {
-  border-radius: 0.8rem;
-  object-fit: cover;
+/* Use padding to avoid layout jumps when changing columns */
+.wrapper > .wrapper-img + .wrapper-img {
+  padding-left: 1.5rem;
 }
 
-/* This can be improved with a css variable */
-.wrapper:has(.wrapper-img:nth-child(1):hover) {
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+/* This can be improved */
+.wrapper:has(.wrapper-img-1:hover) {
   grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
-.wrapper:has(.wrapper-img:nth-child(2):hover) {
+.wrapper:has(.wrapper-img-2:hover) {
   grid-template-columns: 1fr 2fr 1fr 1fr;
 }
 
-.wrapper:has(.wrapper-img:nth-child(3):hover) {
+.wrapper:has(.wrapper-img-3:hover) {
   grid-template-columns: 1fr 1fr 2fr 1fr;
 }
 
-.wrapper:has(.wrapper-img:nth-child(4):hover) {
+.wrapper:has(.wrapper-img-4:hover) {
   grid-template-columns: 1fr 1fr 1fr 2fr;
 }
