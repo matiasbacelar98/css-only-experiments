@@ -65,6 +65,10 @@ h6 {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: 'Work Sans', serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .wrapper {
@@ -89,6 +93,34 @@ h6 {
   height: 100%;
   object-fit: cover;
   border-radius: 0.8rem;
+}
+
+.wrapper-img {
+  position: relative;
+}
+
+.wrapper-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  height: 100%;
+  width: calc(100% - 1.5rem);
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 0.8rem;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(255, 255, 255, 0) 55%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.wrapper-img:nth-child(1)::after {
+  width: 100%;
+  left: 0;
 }
 
 /* This can be improved */
